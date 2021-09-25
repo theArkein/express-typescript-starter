@@ -9,5 +9,5 @@ dotenv.config()
 app.use(routes)
 
 app.listen(process.env.PORT, () => {
-  log.success(`Listening to port: ${process.env.PORT}`)
+  log.success(`Listening to port: ${process.env.PORT as string}`)
 })
