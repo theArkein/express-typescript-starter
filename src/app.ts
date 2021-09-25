@@ -1,4 +1,5 @@
 import express from 'express'
+import morgan from 'morgan'
 import { routes } from './routes/routes'
 import { log } from './helpers/helpers'
 import { db } from './db/db'
@@ -14,6 +15,7 @@ db.connect().then(() => {
   process.exit(10)
 })
 
+app.use(morgan(config.morgan.format))
 app.use(routes)
 
 app.listen(config.port, () => {
