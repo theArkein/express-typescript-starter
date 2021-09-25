@@ -19,5 +19,6 @@ app.use(morgan(config.morgan.format))
 app.use(routes)
 
 app.listen(config.port, () => {
+  log.info('\nApp started')
   log.success(`Listening to port: ${config.port as string}`)
 })
